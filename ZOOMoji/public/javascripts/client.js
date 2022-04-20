@@ -4,7 +4,7 @@ console.log('Client-side code running');
 
 // STUDENT 04 use:
 // This is Prof. Huang's port.  Use your own please!!
-const myURL = "http://student04.cse.nd.edu:51000";
+const myURL = "http://student04.cse.nd.edu:51005";
 
 const zoomButton = document.getElementById('zoomButton');
 zoomButton.addEventListener('click', function(e) {
