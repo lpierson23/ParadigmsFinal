@@ -3,7 +3,6 @@ console.log('Client-side code running');
 //const myURL = "http://localhost:3000";
 
 // STUDENT 04 use:
-// This is Prof. Huang's port.  Use your own please!!
 const myURL = "http://student04.cse.nd.edu:51005";
 
 const zoomButton = document.getElementById('zoomButton');
@@ -12,49 +11,49 @@ zoomButton.addEventListener('click', function(e) {
   location.href = myURL.concat("/zoom")
 });
 
-const mapButton = document.getElementById('mapButton');
-mapButton.addEventListener('click', function(e) {
-  console.log('Map button was clicked');
-  location.href = myURL.concat("/map");
+const quizButton = document.getElementById('quizButton');
+quizButton.addEventListener('click', function(e) {
+  console.log('quiz button was clicked');
+  location.href = myURL.concat("/quiz");
 });
 
-const zooButton = document.getElementById('zooButton');
-zooButton.addEventListener('click', function(e) {
-  console.log('Zoo button was clicked');
+const memojisButton = document.getElementById('memojisButton');
+memojisButton.addEventListener('click', function(e) {
+  console.log('memojis button was clicked');
   location.href = myURL.concat("/");
 });
 
-const camelButton = document.getElementById('camelButton');
-camelButton.addEventListener('click', function(e) {
-  console.log('Camel button was clicked');
-  location.href = myURL.concat("/camel")
+const beccaButton = document.getElementById('beccaButton');
+beccaButton.addEventListener('click', function(e) {
+  console.log('becca button was clicked');
+  location.href = myURL.concat("/becca")
   //document.getElementById("AnimalImage").src ="images/camel.jpg"
   //document.getElementById("p2").innerHTML = "Camels are mammals with long legs, a big-lipped snout and a humped back.!";
   //document.getElementById("p1").innerHTML = "Cherry Camel"; 
 });
 
-const monkeyButton = document.getElementById('monkeyButton');
-monkeyButton.addEventListener('click', function(e) {
-  console.log('Monkey button was clicked');
-  location.href = myURL.concat("/monkey")
+const domButton = document.getElementById('domButton');
+domButton.addEventListener('click', function(e) {
+  console.log('dom button was clicked');
+  location.href = myURL.concat("/dom")
   //document.getElementById("AnimalImage").src ="images/monkey.jpg";
   //document.getElementById("p2").innerHTML = "Monkeys live in trees, grasslands, mountains, forests, and on high plains. Each monkey has its own unique fingerprints.";
   //document.getElementById("p1").innerHTML = "Mindy Monkey"; 
 });
 
-const crocButton = document.getElementById('crocButton');
-crocButton.addEventListener('click', function(e) {
-  console.log('Crocodile button was clicked');
-  location.href = myURL.concat("/crocodile") ;
+const lilyButton = document.getElementById('lilyButton');
+lilyButton.addEventListener('click', function(e) {
+  console.log('lily button was clicked');
+  location.href = myURL.concat("/lily") ;
   //document.getElementById("AnimalImage").src ="images/crocodile.jpg";
   //document.getElementById("p2").innerHTML = "Crocodiles are repitles with sharp teeth.  They can run very fast over short distances.";
   //document.getElementById("p1").innerHTML = "Craig Crocodile"; 
 });
 
-const cowButton = document.getElementById('cowButton');
-cowButton.addEventListener('click', function(e) {
-  console.log('Cow button was clicked');
-  location.href = myURL.concat("/cow");
+const bridgetButton = document.getElementById('bridgetButton');
+bridgetButton.addEventListener('click', function(e) {
+  console.log('bridget button was clicked');
+  location.href = myURL.concat("/bridget");
   //document.getElementById("AnimalImage").src ="images/cow.jpg"
   //document.getElementById("p2").innerHTML = "Cows are ruminants, which are cud chewing mammals. Sheep and camels also are ruminants. A cow chews her cud (regurgitated, partially digested food) for up to 8 hours each day.";
   //document.getElementById("p1").innerHTML = "Chloe Cow";  
