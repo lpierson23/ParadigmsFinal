@@ -1,37 +1,37 @@
 exports.index = function(req, res, next) {
-  res.render('index', { about: 'Welcome to our zoo!' , animal_name:
- 'Zoo Animals'});
+  res.render('index', { about: 'Welcome to our ZOOMoji!' , animal_name:
+ 'all memojis'});
 }
 
 exports.zoom = function(req, res, next) {
   res.render('zoom', {about:'Zoom Time'});
 }
 
-exports.zoo = function(req, res, next) {
-   res.render('index', { about: 'Welcome to our zoo.', animal_name:'Zoo Animals'}); 
+exports.memojis = function(req, res, next) {
+   res.render('index', { about: 'See our memojis.', animal_name:'memojis'}); 
 }
 
-exports.camel = function(req, res, next) {
-   console.log("Clicked on camel button")
-   res.render('camel', { about: 'Camels are mammals with long legs, a big-lipped snout\
-   and a humped back.', animal_name:'Camel'});
+exports.becca = function(req, res, next) {
+   console.log("Clicked on becca button")
+   res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order.', animal_name:'becca'});
 }
 
-exports.croc = function(req, res, next) {
-   console.log("Clicked on croc button")
-   res.render('crocodile', { about: 'Crocodiles are repitles with sharp teeth.  They can run very fast over short distances.' , animal_name:'Crocodile'}); 
+exports.lily = function(req, res, next) {
+   console.log("Clicked on lily button")
+   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one.' , animal_name:'lily'}); 
 }
 
-exports.cow = function(req, res, next) {
-   console.log("Clicked on COW button")
-   res.render('cow', { about: 'Cows are ruminants, which are cud chewing mammals. Sheep and camels also are ruminants. A cow chews her cud (regurgitated, partially digested food) for up to 8 hours each day.' , animal_name:'Cow'}); 
+exports.bridget = function(req, res, next) {
+   console.log("Clicked on bridget button")
+   res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order.' , animal_name:'bridget'}); 
 }
 
-exports.monkey = function(req, res, next) {
-   res.render('monkey', { about: 'Monkeys live in trees, grasslands, mountains, forests, and on high plains. Each monkey has its own unique fingerprints.' , animal_name:'Monkey'}); 
+exports.dom = function(req, res, next) {
+   console.log("Clicked on dom button")
+   res.render('dom', { about: 'Monkeys live in trees, grasslands, mountains, forests, and on high plains. Each monkey has its own unique fingerprints.' , animal_name:'dom'}); 
 }
 
-exports.map = function(req, res, next) {
-   res.render('map', { markers: 'Markers will go here.'}); 
-}
+//exports.map = function(req, res, next) {
+//   res.render('map', { markers: 'Markers will go here.'}); 
+//}
 
