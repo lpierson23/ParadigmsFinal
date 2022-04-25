@@ -17,4 +17,5 @@ block content
     p #{about}
     img(src='images/Becmoji.jpg',style='width:500px')
 
-    button#likeBecca LIKE <3
+    form(action="/",method="POST")
+        button(type="submit" style="color:red")#likeBecca LIKE <3

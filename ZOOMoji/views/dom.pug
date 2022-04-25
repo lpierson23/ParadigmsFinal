@@ -17,4 +17,5 @@ block content
     p #{about}
     img(src='images/Domoji.jpg',style='width:500px')
     
-    button#likeDOM LIKE <3
+    form(action="/",method="POST")
+        button(type="submit" style="color:red")#likeDOM LIKE <3
