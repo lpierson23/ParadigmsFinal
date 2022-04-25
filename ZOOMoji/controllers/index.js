@@ -28,7 +28,7 @@ exports.bridget = function(req, res, next) {
 
 exports.dom = function(req, res, next) {
    console.log("Clicked on dom button")
-   res.render('dom', { about: 'Monkeys live in trees, grasslands, mountains, forests, and on high plains. Each monkey has its own unique fingerprints.' , name:'dom'}); 
+   res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games.' , name:'dom'}); 
 }
 
 //exports.map = function(req, res, next) {
