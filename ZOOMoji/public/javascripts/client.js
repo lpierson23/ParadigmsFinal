@@ -20,7 +20,7 @@ quizButton.addEventListener('click', function(e) {
 const memojisButton = document.getElementById('memojisButton');
 memojisButton.addEventListener('click', function(e) {
   console.log('memojis button was clicked');
-  location.href = myURL.concat("/");
+  location.href = myURL;
 });
 
 const beccaButton = document.getElementById('beccaButton');
