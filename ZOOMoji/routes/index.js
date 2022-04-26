@@ -11,7 +11,7 @@ router.get('/becca',index.becca);
 router.get('/dom',index.dom);
 router.get('/bridget',index.bridget);
 router.get('/lily',index.lily);
-//router.get('/map',index.map);
+router.get('/quiz',index.quiz);
 
 
 module.exports = router;
