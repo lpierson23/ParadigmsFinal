@@ -32,10 +32,13 @@ exports.dom = function(req, res, next) {
 }
 
 
+<<<<<<< HEAD
+=======
 exports.quiz = function(req, res, next){
     console.log("Clicked on quiz button")
     res.render('quiz', {questions: 'Questions will go here.'});
 }
+>>>>>>> 69823d39aa3f6644cdde4684756ad07571776d9b
 //exports.map = function(req, res, next) {
 //   res.render('map', { markers: 'Markers will go here.'}); 
 //}
