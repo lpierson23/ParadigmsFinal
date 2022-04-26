@@ -31,6 +31,7 @@ exports.dom = function(req, res, next) {
    res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games.' , name:'dom'}); 
 }
 
+
 //exports.map = function(req, res, next) {
 //   res.render('map', { markers: 'Markers will go here.'}); 
 //}
