@@ -31,6 +31,11 @@ exports.dom = function(req, res, next) {
    res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games.' , name:'dom'}); 
 }
 
+
+exports.quiz = function(req, res, next){
+    console.log("Clicked on quiz button")
+    res.render('quiz', {questions: 'Questions will go here.'});
+}
 //exports.map = function(req, res, next) {
 //   res.render('map', { markers: 'Markers will go here.'}); 
 //}
