@@ -100,7 +100,7 @@ exports.quiz = function(req, res, next){
     }
 
     res.render('quiz', {questions: selected});
- }
+}
 
 //exports.map = function(req, res, next) {
 //   res.render('map', { markers: 'Markers will go here.'}); 
