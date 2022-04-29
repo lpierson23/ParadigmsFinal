@@ -32,13 +32,76 @@ exports.dom = function(req, res, next) {
 }
 
 
-<<<<<<< HEAD
-=======
 exports.quiz = function(req, res, next){
     console.log("Clicked on quiz button")
-    res.render('quiz', {questions: 'Questions will go here.'});
-}
->>>>>>> 69823d39aa3f6644cdde4684756ad07571776d9b
+    const all = 
+[
+   {
+      "question":"What is your favorite dog?",
+      "answers":{
+         "a":"I\'m a cat person",
+         "b":"My dog",
+         "c":"Any dog that will let me pet it",
+         "d":"Beagles"
+      }
+   },
+   {
+      "question":"What dorm do you live in?",
+      "answers":{
+         "a":"Off-campus",
+         "b":"Cav",
+         "c":"PE",
+         "d":"Siggy, baby"
+      }
+   },
+   {
+      "question":"What is your favorite food to have on campus?",
+      "answers":{
+         "a":"Smashburger",
+         "b":"Starbucks",
+         "c":"Modern Market",
+         "d":"Subway"
+      }
+   },
+   {
+      "question":"What is your favorite ND tradition?",
+      "answers":{
+         "a":"ND Day",
+         "b":"Keenan Revue",
+         "c":"The Meritocracy",
+         "d":"Football Games"
+      }
+   },
+   {
+      "question":"What is your favorite Taylor Swift song?",
+      "answers":{
+         "a":"Paper Rings",
+         "b":"Picture to Burn",
+         "c":"London Boy",
+         "d":"I Knew You Were Trouble"
+      }
+   }
+]
+    
+    const questionCombos = ["012", "013", "014", "123", "124", "134", "023", "024", "234"];
+
+    
+    let questionNums = questionCombos[Math.floor(Math.random() * 9)];
+    console.log(questionNums);
+    var count = 0;
+    var selected = [];
+
+    for(var i=0; i < all.length; i++){
+        if(questionNums.charAt(count) == i){
+            console.log(questionNums.charAt(count));
+            selected.push(all[i]);
+            count += 1;
+        }
+    }
+
+    res.render('quiz', {questions: selected});
+ }
+
 //exports.map = function(req, res, next) {
 //   res.render('map', { markers: 'Markers will go here.'}); 
 //}
