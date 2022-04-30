@@ -13,5 +13,7 @@ router.get('/bridget',index.bridget);
 router.get('/lily',index.lily);
 router.get('/quiz',index.quiz);
 
+router.get('/results', index.results);
+
 
 module.exports = router;
