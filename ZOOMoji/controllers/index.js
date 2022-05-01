@@ -99,7 +99,7 @@ exports.quiz = function(req, res, next){
         }
     }
 
-    res.render('quiz', {questions: selected});
+    res.render('quiz', {questions: selected, results: ''});
 }
 
 
