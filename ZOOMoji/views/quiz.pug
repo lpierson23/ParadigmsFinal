@@ -44,7 +44,7 @@ block content
     
     br
     br
-    #{results}
+    div(id="result")
     br
 
     script.
@@ -81,7 +81,8 @@ block content
                         }
                     }
                 }
-            } 
+            }
+            console.log(aCount,bCount,cCount,dCount) 
         
             let winner = Math.max(aCount, bCount, cCount, dCount);
 
