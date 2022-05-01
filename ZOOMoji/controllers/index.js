@@ -11,26 +11,64 @@ exports.memojis = function(req, res, next) {
    res.render('index', { about: 'See our memojis.', name:'memojis'}); 
 }
 
+var likes = {
+  bridget: 0,
+  lily: 0,
+  becca: 0,
+  dom: 0
+}
+
 exports.becca = function(req, res, next) {
    console.log("Clicked on becca button")
-   res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order.', name:'becca'});
+   res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + likes.becca, name:'becca'});
 }
 
 exports.lily = function(req, res, next) {
    console.log("Clicked on lily button")
-   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one.' , name:'lily'}); 
+   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + likes.lily , name:'lily'}); 
 }
 
 exports.bridget = function(req, res, next) {
    console.log("Clicked on bridget button")
-   res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order.' , name:'bridget'}); 
+   res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + likes.bridget, name:'bridget'}); 
 }
 
 exports.dom = function(req, res, next) {
    console.log("Clicked on dom button")
-   res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games.' , name:'dom'}); 
+   res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + likes.dom , name:'dom'}); 
 }
 
+exports.get_like = function(req, res, next) {
+
+}
+
+exports.bridget_like = function(req, res, next) { // bridget likes
+  console.log("liked");
+  likes.bridget = likes.bridget + 1;
+  res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + likes.bridget, name:'bridget'}); 
+  res.redirect('/bridget');
+}
+
+exports.becca_like = function(req, res, next) { // becca likes
+  console.log("liked");
+  likes.becca = likes.becca + 1;
+  res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + likes.becca, name:'becca'});
+  res.redirect('/becca');
+}
+
+exports.lily_like = function(req, res, next) { // lily likes
+  console.log("liked");
+  likes.lily = likes.lily + 1;
+   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + likes.lily , name:'lily'}); 
+  res.redirect('/lily');
+}
+
+exports.dom_like = function(req, res, next) { // dom likes
+  console.log("liked");
+  likes.dom = likes.dom + 1;
+  res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + likes.dom , name:'dom'}); 
+  res.redirect('/dom');
+}
 
 exports.quiz = function(req, res, next){
     console.log("Clicked on quiz button")
