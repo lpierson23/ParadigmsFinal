@@ -3,7 +3,7 @@ console.log('Client-side code running');
 //const myURL = "http://localhost:3000";
 
 // STUDENT 04 use:
-const myURL = "http://student04.cse.nd.edu:51005";
+const myURL = "http://localhost:51005";
 
 const zoomButton = document.getElementById('zoomButton');
 zoomButton.addEventListener('click', function(e) {
