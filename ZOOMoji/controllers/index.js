@@ -11,31 +11,44 @@ exports.memojis = function(req, res, next) {
    res.render('index', { about: 'See our memojis.', name:'memojis'}); 
 }
 
-var likes = {
-  bridget: 0,
-  lily: 0,
-  becca: 0,
-  dom: 0
-}
-
 exports.becca = function(req, res, next) {
    console.log("Clicked on becca button")
-   res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + likes.becca, name:'becca'});
+   const fs = require('fs');
+   var rawData = fs.readFileSync('./controllers/likes.json');
+   let likes = JSON.parse(rawData);
+   var beccaLikes = likes.becca;
+
+   res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + beccaLikes, name:'becca'});
 }
 
 exports.lily = function(req, res, next) {
    console.log("Clicked on lily button")
-   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + likes.lily , name:'lily'}); 
+   const fs = require('fs');
+   var rawData = fs.readFileSync('./controllers/likes.json');
+   let likes = JSON.parse(rawData);
+   var lilyLikes = likes.lily;
+   
+   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + lilyLikes, name:'lily'}); 
 }
 
 exports.bridget = function(req, res, next) {
    console.log("Clicked on bridget button")
-   res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + likes.bridget, name:'bridget'}); 
+   const fs = require('fs');
+   var rawData = fs.readFileSync('./controllers/likes.json');
+   let likes = JSON.parse(rawData);
+   var bridgetLikes = likes.bridget;
+   
+   res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + bridgetLikes, name:'bridget'}); 
 }
 
 exports.dom = function(req, res, next) {
    console.log("Clicked on dom button")
-   res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + likes.dom , name:'dom'}); 
+   const fs = require('fs');
+   var rawData = fs.readFileSync('./controllers/likes.json');
+   let likes = JSON.parse(rawData);
+   var domLikes = likes.dom;
+
+   res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + domLikes, name:'dom'}); 
 }
 
 exports.get_like = function(req, res, next) {
@@ -44,29 +57,94 @@ exports.get_like = function(req, res, next) {
 
 exports.bridget_like = function(req, res, next) { // bridget likes
   console.log("liked");
-  likes.bridget = likes.bridget + 1;
-  res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + likes.bridget, name:'bridget'}); 
+  const fs = require('fs');
+  var rawData = fs.readFileSync('./controllers/likes.json');
+  let likes = JSON.parse(rawData);
+  var bridgetLikes = likes.bridget;
+
+  var obj = {
+    "becca" : likes.becca,
+    "bridget" : bridgetLikes + 1,
+    "lily" : likes.lily,
+    "dom" : likes.dom
+    }
+
+  fs.writeFile('./controllers/likes.json', JSON.stringify(obj), function(err){
+    if (err) throw err;
+
+  });
+  
+  res.render('bridget', { about: 'Lover of Jesus, Sam\'s Club pizza, a good tan and the color green. In that order. Likes: ' + (bridgetLikes + 1), name:'bridget'}); 
   res.redirect('/bridget');
 }
 
 exports.becca_like = function(req, res, next) { // becca likes
   console.log("liked");
-  likes.becca = likes.becca + 1;
-  res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + likes.becca, name:'becca'});
+  const fs = require('fs');
+  var rawData = fs.readFileSync('./controllers/likes.json');
+  let likes = JSON.parse(rawData);
+  var beccaLikes = likes.becca;
+
+  var obj = {
+    "becca" : beccaLikes + 1,
+    "bridget" : likes.bridget,
+    "lily" : likes.lily,
+    "dom" : likes.dom
+    }
+
+  fs.writeFile('./controllers/likes.json', JSON.stringify(obj), function(err){
+    if (err) throw err;
+
+  });
+  
+  res.render('becca', { about: 'Lover of ducks, root beer, sweatshirts and long walks. In no particular order. Likes: ' + (beccaLikes + 1), name:'becca'});
   res.redirect('/becca');
 }
 
 exports.lily_like = function(req, res, next) { // lily likes
+
   console.log("liked");
-  likes.lily = likes.lily + 1;
-   res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + likes.lily , name:'lily'}); 
+  const fs = require('fs');
+  var rawData = fs.readFileSync('./controllers/likes.json');
+  let likes = JSON.parse(rawData);
+  var lilyLikes = likes.lily;
+
+  var obj = {
+    "becca" : likes.becca,
+    "bridget" : likes.bridget,
+    "lily" : lilyLikes + 1,
+    "dom" : likes.dom
+    }
+
+  fs.writeFile('./controllers/likes.json', JSON.stringify(obj), function(err){
+    if (err) throw err;
+
+  });
+  res.render('lily', { about: 'Lover of theater, all of the grandma things (knitting, sewing, reading), and coffee with lots of sugar. All number one. Likes: ' + (lilyLikes + 1) , name:'lily'}); 
   res.redirect('/lily');
 }
 
 exports.dom_like = function(req, res, next) { // dom likes
   console.log("liked");
-  likes.dom = likes.dom + 1;
-  res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + likes.dom , name:'dom'}); 
+
+  const fs = require('fs');
+  var rawData = fs.readFileSync('./controllers/likes.json');
+  let likes = JSON.parse(rawData);
+  var domLikes = likes.dom;
+
+  var obj = {
+    "becca" : likes.becca,
+    "bridget" : likes.bridget,
+    "lily" : likes.lily,
+    "dom" : domLikes + 1
+    }
+
+  fs.writeFile('./controllers/likes.json', JSON.stringify(obj), function(err){
+    if (err) throw err;
+
+  });
+  
+  res.render('dom', { about: 'Lover of basic boy things: Star Wars, Game of Thrones, Mario Kart & going to football games. Likes: ' + (domLikes + 1), name:'dom'}); 
   res.redirect('/dom');
 }
 
